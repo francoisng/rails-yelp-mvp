@@ -1,0 +1,25 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <i class="fa fa-hand-spock-o"></i>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/francoisng", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <%= simple_form_for [ @restaurant ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number%>
+    <%= f.input :category, collection: %w(chinese italian japanese french belgian) %>
+    <%= f.submit "Submit restaurant", class: "btn btn-primary" %>
+  <% end %>
+</div>
